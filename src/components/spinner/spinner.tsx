@@ -1,12 +1,14 @@
 import React from 'react';
-import styles from './styles.module.css';
+import styles from './spinner.module.css';
 
-interface SpinnerProps {
+export interface SpinnerProps {
+  progress: number;
   svgSize?: number
   strokeWidth?: number
 }
 
-const Spinner: React.FunctionComponent<SpinnerProps> = ({
+export const Spinner: React.FunctionComponent<SpinnerProps> = ({
+  progress,
   svgSize = 150,
   strokeWidth = 10
 }: SpinnerProps) => {
@@ -17,7 +19,6 @@ const Spinner: React.FunctionComponent<SpinnerProps> = ({
   };
 
   const circleCenterCoordinate = svgSize / 2;
-  const progress = 42;
 
   // It is necessary to factor in the width of the stroke to get the actual radius
   const circleRadius = circleCenterCoordinate - strokeWidth;
@@ -73,5 +74,3 @@ const Spinner: React.FunctionComponent<SpinnerProps> = ({
     </div>
   );
 }
-
-export { Spinner };

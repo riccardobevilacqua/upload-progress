@@ -1,14 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+import { useInterval } from './utils/use-interval';
 import { Spinner } from './components/spinner/spinner';
 
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+export interface AppProps {
+  delay?: number | null;
+}
+
+export const App: React.FunctionComponent<AppProps> = ({
+  delay = 50
+}) => {
+  const [progress, setProgress] = useState(0);
+  const [isActive, setIsActive] = useState(false);
+
+  // Clicking "Start" a tick will increment the progress based on the delay
+  useInterval(
+    // callback
+    () => progress === 100 ? setIsActive(false) : setProgress(progress + 1),
+    // delay
+    isActive ? delay : null
+  );
+
+  const toggleIsActive = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.stopPropagation();
+    setIsActive(!isActive);
+  }
+
   return (
     <div className="App">
-      <Spinner />
+      <Spinner progress={progress} />
+      <button onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => toggleIsActive(e)}>
+        {isActive ? 'Pause' : 'Play'}
+      </button>
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -26,5 +53,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
