@@ -10,7 +10,7 @@ describe('Spinner', () => {
   });
 
   test('shows given percentage on spinner', () => {
-    const progress = 50;
+    const progress = 42;
 
     render(<Spinner progress={progress} />);
     expect(screen.getByText(`${progress}`)).toBeInTheDocument();
