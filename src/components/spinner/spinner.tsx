@@ -1,12 +1,22 @@
 import React from 'react';
 import styles from './styles.module.css';
 
-const Spinner: React.FunctionComponent<{}> = () => {
-  const svgSize = 150;
+interface SpinnerProps {
+  svgSize?: number
+  strokeWidth?: number
+}
+
+const Spinner: React.FunctionComponent<SpinnerProps> = ({
+  svgSize = 150,
+  strokeWidth = 10
+}: SpinnerProps) => {
   const viewBox = [0, 0, svgSize, svgSize].join(' ');
+  const dimensions = {
+    width: svgSize + 'px',
+    height: svgSize + 'px'
+  };
 
   const circleCenterCoordinate = svgSize / 2;
-  const strokeWidth = 10;
   const progress = 42;
 
   // It is necessary to factor in the width of the stroke to get the actual radius
@@ -19,22 +29,28 @@ const Spinner: React.FunctionComponent<{}> = () => {
   const strokeDashoffset = Math.round(strokeDasharray * (1 - progress / 100));
 
   const circleBackgroundStyle = {
-    strokeWidth: strokeWidth + 'px'
+    strokeWidth: strokeWidth + 'px',
+    ...dimensions
   };
 
   const circleForegroundStyle = {
     strokeWidth: strokeWidth + 'px',
     strokeDashoffset,
-    strokeDasharray
+    strokeDasharray,
+    ...dimensions
   };
 
   return (
     <div className={styles.spinner__container}>
-      <div className={styles.spinner__progress}>
+      <div
+        className={styles.spinner__progress}
+        style={dimensions}
+      >
         <svg
           shapeRendering="geometricPrecision"
           viewBox={viewBox}
           xmlns="http://www.w3.org/2000/svg"
+          style={dimensions}
         >
           <circle
             className={[styles.spinner__circle, styles.circle__background].join(' ')}

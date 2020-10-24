@@ -10,22 +10,16 @@
 
 .spinner__progress {
   position: relative;
-  width: 150px;
-  height: 150px;
 }
 
 .spinner__progress svg {
   fill: none;
   position: relative;
-  width: 150px;
-  height: 150px;
   transform: rotate(-90deg);
 }
 
 .spinner__circle {
   position: relative;
-  width: 150px;
-  height: 150px;
   stroke-linecap: round;
 }
 
