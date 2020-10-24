@@ -47,9 +47,8 @@ const Spinner: React.FunctionComponent<SpinnerProps> = ({
         style={dimensions}
       >
         <svg
-          shapeRendering="geometricPrecision"
-          viewBox={viewBox}
           xmlns="http://www.w3.org/2000/svg"
+          viewBox={viewBox}
           style={dimensions}
         >
           <circle
