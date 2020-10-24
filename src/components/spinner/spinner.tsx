@@ -2,15 +2,15 @@ import React from 'react';
 import styles from './spinner.module.css';
 
 export interface SpinnerProps {
-  animationPlayState: string;
-  progress: number;
+  animationPlayState?: 'running' | 'paused';
+  progress?: number;
   svgSize?: number;
   strokeWidth?: number;
 }
 
 export const Spinner: React.FunctionComponent<SpinnerProps> = ({
-  animationPlayState,
-  progress,
+  animationPlayState = 'paused',
+  progress = 0,
   svgSize = 150,
   strokeWidth = 10
 }: SpinnerProps) => {
@@ -49,7 +49,7 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
   };
 
   return (
-    <div className={styles.spinner__container}>
+    <div className={styles.spinner__container} data-testid="spinner">
       <div
         className={styles.spinner__progress}
         style={dimensions}
