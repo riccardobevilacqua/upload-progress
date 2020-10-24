@@ -1,0 +1,60 @@
+.spinner__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.spinner__progress {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.spinner__circle {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.spinner__circle circle {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  fill: none;
+  stroke-width: 10px;
+  stroke-linecap: round;
+  stroke-dasharray: 440;
+}
+
+.spinner__circle circle.circle__background {
+  stroke: #e8ebed;
+  stroke-dashoffset: 0;
+}
+
+.spinner__circle circle.circle__foreground {
+  stroke: #409fff;
+}
+
+.spinner__caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #255788;
+}
+
+.spinner__number {
+  font-size: 40px;
+}
+
+.spinner__percent {
+  font-size: 20px;
+}

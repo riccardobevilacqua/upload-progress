@@ -1,10 +1,14 @@
 import React from 'react';
+
+import { Spinner } from './components/spinner/spinner';
+
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
+      <Spinner />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
