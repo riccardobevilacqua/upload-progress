@@ -2,7 +2,7 @@
 
 A circular spinner with percentage and animations.
 
-[PREVIEW](https://tender-dijkstra-58fe01.netlify.app/)
+[PREVIEW](https://fervent-chandrasekhar-5ba724.netlify.app/)
 
 ## Objective
 
