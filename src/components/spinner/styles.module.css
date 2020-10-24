@@ -14,28 +14,26 @@
   height: 150px;
 }
 
+.spinner__progress svg {
+  fill: none;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform: rotate(-90deg);
+}
+
 .spinner__circle {
   position: relative;
   width: 150px;
   height: 150px;
-}
-
-.spinner__circle circle {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  fill: none;
-  stroke-width: 10px;
   stroke-linecap: round;
-  stroke-dasharray: 440;
 }
 
-.spinner__circle circle.circle__background {
+.circle__background {
   stroke: #e8ebed;
-  stroke-dashoffset: 0;
 }
 
-.spinner__circle circle.circle__foreground {
+.circle__foreground {
   stroke: #409fff;
 }
 
