@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useInterval } from './utils/use-interval';
 import { Spinner } from './components/spinner/spinner';
 
-import './App.css';
+import styles from './App.module.css';
 
 export interface AppProps {
   delay?: number | null;
@@ -32,7 +32,7 @@ export const App: React.FunctionComponent<AppProps> = ({
   }
 
   return (
-    <div className="App" data-testid="app">
+    <div className={styles.App} data-testid="app">
       <Spinner progress={progress} animationPlayState={isActive ? 'running' : 'paused'} />
       <button onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => toggleIsActive(e)} data-testid="playPauseButton">
         {isActive ? 'Pause' : 'Play'}

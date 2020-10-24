@@ -55,9 +55,9 @@
 }
 
 .spinner__number {
-  font-size: 40px;
+  font-size: 2rem;
 }
 
 .spinner__percent {
-  font-size: 20px;
+  font-size: 1rem;
 }
