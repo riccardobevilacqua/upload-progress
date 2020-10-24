@@ -26,6 +26,9 @@ export const App: React.FunctionComponent<AppProps> = ({
 
   const toggleIsActive = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.stopPropagation();
+    if (progress === 100) {
+      setProgress(0);
+    }
     setIsActive(!isActive);
   }
 
