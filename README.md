@@ -17,7 +17,7 @@ This projects has been developed using:
 - NPM
 - Create React App
   - React (with Hooks)
-  - Typescript
+  - TypeScript
   - React Testing Library
 - CSS Modules
 - SVG
