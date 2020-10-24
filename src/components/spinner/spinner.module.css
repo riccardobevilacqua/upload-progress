@@ -16,7 +16,17 @@
   fill: none;
   shape-rendering: geometricPrecision;
   position: relative;
-  transform: rotate(-90deg);
+  animation: spin 1s linear infinite;
+  z-index: 2;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .spinner__circle {

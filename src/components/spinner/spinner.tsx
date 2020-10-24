@@ -2,12 +2,14 @@ import React from 'react';
 import styles from './spinner.module.css';
 
 export interface SpinnerProps {
+  animationPlayState: string;
   progress: number;
-  svgSize?: number
-  strokeWidth?: number
+  svgSize?: number;
+  strokeWidth?: number;
 }
 
 export const Spinner: React.FunctionComponent<SpinnerProps> = ({
+  animationPlayState,
   progress,
   svgSize = 150,
   strokeWidth = 10
@@ -28,6 +30,11 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
 
   // strokeDashoffset is proportional to the progress
   const strokeDashoffset = Math.round(strokeDasharray * (1 - progress / 100));
+
+  const svgStyle = {
+    ...dimensions,
+    animationPlayState
+  }
 
   const circleBackgroundStyle = {
     strokeWidth: strokeWidth + 'px',
@@ -50,7 +57,7 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox={viewBox}
-          style={dimensions}
+          style={svgStyle}
         >
           <circle
             className={[styles.spinner__circle, styles.circle__background].join(' ')}
