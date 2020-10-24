@@ -13,6 +13,7 @@ describe('Spinner', () => {
     const progress = 42;
 
     render(<Spinner progress={progress} />);
+
     expect(screen.getByText(`${progress}`)).toBeInTheDocument();
   });
 });
