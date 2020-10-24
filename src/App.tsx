@@ -34,7 +34,7 @@ export const App: React.FunctionComponent<AppProps> = ({
   return (
     <div className="App" data-testid="app">
       <Spinner progress={progress} animationPlayState={isActive ? 'running' : 'paused'} />
-      <button onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => toggleIsActive(e)}>
+      <button onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => toggleIsActive(e)} data-testid="playPauseButton">
         {isActive ? 'Pause' : 'Play'}
       </button>
     </div>
