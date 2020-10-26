@@ -26,10 +26,10 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
   const circleRadius = circleCenterCoordinate - strokeWidth;
 
   // strokeDasharray equals to the circle circumference
-  const strokeDasharray = Math.round(2 * circleRadius * Math.PI);
+  const strokeDasharray = Math.ceil(2 * circleRadius * Math.PI);
 
   // strokeDashoffset is proportional to the progress
-  const strokeDashoffset = Math.round(strokeDasharray * (1 - progress / 100));
+  const strokeDashoffset = Math.ceil(strokeDasharray * (1 - progress / 100));
 
   const svgStyle = {
     ...dimensions,
